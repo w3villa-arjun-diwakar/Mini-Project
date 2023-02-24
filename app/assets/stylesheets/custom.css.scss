@@ -1,0 +1,68 @@
+@import 'bootstrap/dist/css/bootstrap';
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+  
+}
+.navbar strong{
+   color:#6969b5;
+   
+}
+
+.welcome-text{
+    color: #253858;
+    font-size: 45px;
+    line-height: 54px;
+    font-weight: 300;
+    margin-top: 100px;
+}
+
+.welcome-image img{
+    border-radius: 20px;
+}
+
+.chat-button{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: #6969b5;
+    border-radius: 40px;
+    display: flex;
+    color:white;
+    justify-content: center;
+    justify-items: center;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.chat-button p{
+    font-weight: bold;
+    margin: 10px;
+}
+
+.chat-button .material-icons{
+    margin-right: 0;
+}
+
+.mini-text-1{
+    color: #253858;
+    font-size: 14px;
+    line-height: 21px;
+    display: flex;
+    font-weight: 400;
+}
+
+.mini-text-2{
+    color: #FF9B2C;
+    font-size: 14px;
+    line-height: 21px;
+    display: flex;
+    font-weight: 400;
+}
+
+.material-icons{
+    margin: 10px;    
+}
