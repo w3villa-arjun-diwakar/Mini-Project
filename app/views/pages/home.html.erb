@@ -12,12 +12,36 @@
                 </div>
             </div>
 
-            <div class="col-md-6"><div class="welcome-image"><%= image_tag("policy.jpeg",class: 'rounded mx-auto d-block') %></div>
+            <div class="col-md-6"><div class="welcome-image"><div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="1000">
+                    <%= image_tag("policy.jpeg",class: 'd-block w-100') %>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="2000">
+                    <%= image_tag("policy2.jpeg",class: 'd-block w-100') %>
+                    </div>
+                    <div class="carousel-item">
+                    <%= image_tag("policy3.jpeg",class: 'd-block w-100') %>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                </button>
+                </div>
+                </div>
             </div>
         <div>
-    <div>
-    <h1 class="text-center mt-5">Policies</h1>
-    
+    <div>   
 </section>
 
-<%= render "layouts/chat"%>
+<section class="policies">
+    <h1 class="text-center mt-5">Policies</h1>
+</section>
+
