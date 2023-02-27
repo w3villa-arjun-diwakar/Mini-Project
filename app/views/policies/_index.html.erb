@@ -1,0 +1,21 @@
+
+<div class="row">
+<% @policies.each do |policy| %>
+<div class="col-md-3">
+  <div class="card mb-3">
+    <div class="card-body">
+      <%= image_tag("policy.jpeg",class: 'card-img-top') %>
+      <b class="card-title"><%= policy.title %></b>
+      <%= link_to 'Show', policy , class:"btn btn-primary"%>
+    </div>
+  </div>
+  </div>
+<% end %>
+</div>
+
+
+
+
+
+
+<%#= link_to 'New Policy', new_policy_path %>

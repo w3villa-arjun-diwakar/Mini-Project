@@ -32,6 +32,26 @@
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
+  <div class="field">
+    <%= f.label :Full_name %><br />
+    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Phone %><br />
+    <%= f.text_field :phone, autofocus: true, autocomplete: "phone" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Age %><br />
+    <%= f.text_field :age, autofocus: true, autocomplete: "age" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Gender %><br />
+    <%= f.text_field :gender, autofocus: true, autocomplete: "gender" %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Update" %>
   </div>

@@ -6,29 +6,19 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto mb-2 mb-lg-0 ">
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">Home</a>
+        <li class="nav-item nav-link ">
+          <%= link_to 'Home', root_path , class:"text-decoration-none" %>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+     
+        <% if user_signed_in?%>
+        <li class="nav-item dropdown nav-link ">
+          <a class="av-link dropdown-togglen text-decoration-none" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Profile
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><%= link_to 'Edit Profile', edit_user_registration_path, class:"dropdown-item" %></li>
+            <%= button_to 'Sign Out', destroy_user_session_path , method: :delete ,class:"dropdown-item"  %>
           </ul>
-        </li>
-        <% if user_signed_in?%>
-          <li class="nav-item">
-          <%= link_to 'Edit Profile', edit_user_registration_path, class:"nav-link btn btn-outline-info" %>
-        </li>
-        <li class="nav-item">
-          <%= button_to 'Sign Out', destroy_user_session_path , method: :delete ,class:"nav-link btn btn-outline-info"  %>
         </li>
         <% else%>
         <li class="nav-item">

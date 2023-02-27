@@ -11,6 +11,11 @@
    
 }
 
+// .nav-link{
+//     font-size: 16px;
+//     color: black;
+// }
+
 .welcome-text{
     color: #253858;
     font-size: 45px;
@@ -66,4 +71,15 @@
 
 .material-icons{
     margin: 10px;    
+}
+
+.card-body{
+    display: grid;
+    text-align: center;
+}
+
+.signup-form-container{
+    background-color: aquamarine;
+    // height:500px;
+
 }
