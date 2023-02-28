@@ -78,8 +78,27 @@
     text-align: center;
 }
 
-.signup-form-container{
-    background-color: aquamarine;
-    // height:500px;
-
+// .signup-form-container{
+//     // background-image: url("signup.jpg");
+//     // background-size: cover;    
+    
+// }
+.signup-image img{
+    height: 450px;
+    margin: 100px 20px;
+    border-radius: 100px;
+}
+.already-login{
+    display: flex;
+    margin-top: 10px;
+}
+.login-form{
+    // border: 1px solid blue;
+    padding: 25px;
+    // box-shadow: -28px -7px 48px -10px;
+    border-radius: 20px;
+}
+.login-img img{
+    height: 400px;
+    border-radius: 30px;
 }

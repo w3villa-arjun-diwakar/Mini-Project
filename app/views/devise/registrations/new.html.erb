@@ -1,62 +1,66 @@
-<div class="signup-form-container">
-<div class="row">
-  <div class="col-md-6">
-      <h2>Sign up</h2>
 
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= render "devise/shared/error_messages", resource: resource %>
-        
-        <div class="field">
-          <%= f.label :Full_name %><br />
-          <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+  <div class="signup-box">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+          <h2>Sign up</h2>
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+            
+            <div class="form-group row">
+              <%= f.label :Full_name, class:"col-form-label" %><br />
+              <%= f.text_field :name, autofocus: true, autocomplete: "name", class:"form-control", placeholder:"Enter an full name" %>
+            </div>
+
+            <div class="form-group row">
+              <%= f.label :Phone, class:"col-2 col-form-label" %><br />
+              <%= f.phone_field :phone, autofocus: true, autocomplete: "phone", class:"form-control", placeholder:"Enter an phone number" %>
+            </div>
+
+            <div class="form-group row">
+              <%= f.label :Gender,class:"col-2 col-form-label" %><br />
+              <%= f.text_field :gender, autofocus: true, autocomplete: "gender", class:"form-control", placeholder:"Enter an gender" %>
+            </div>
+
+            <div class="form-group row">
+              <%= f.label :age ,class:"col-2 col-form-label" %><br />
+              <%= f.text_field :age, autofocus: true, autocomplete: "age",class:"form-control", placeholder:"Enter an age" %>
+            </div>
+
+            <div class="form-group row">
+              <%= f.label :email, class:"col-2 col-form-label" %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email",class:"form-control", placeholder:"Enter an email" %>
+            </div>
+
+            <div class="form-group row">
+              <%= f.label :password , class:"col-form-label" %>
+              <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <% end %><br />
+              <%= f.password_field :password, autocomplete: "new-password", class:"form-control", placeholder:"Enter an password" %>
+            </div>
+
+            <div class="form-group row">
+              <%= f.label :password_confirmation , class:"col-form-label" %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "new-password",class:"form-control", placeholder:"Re-write your password"  %>
+            </div>
+
+            <div class="form-group row justify-content-center">
+              <%= f.submit "Sign up", class:"btn btn-outline-dark btn-lg mt-2", style:"width: fit-content; " %>
+            </div>
+          <% end %>
+          <div class="already-login">
+            <p>Already have an acoount?</p>
+            <ul>
+            <%= render "devise/shared/links" %>
+            </ul>
+          </div>
         </div>
-
-        <div class="field">
-          <%= f.label :Phone %><br />
-          <%= f.phone_field :phone, autofocus: true, autocomplete: "phone" %>
+      <div class="col-md-6">
+        <div class="signup-image">
+          <%= image_tag("policy3.jpeg",class: 'd-block w-100') %>
         </div>
-
-        <div class="field">
-          <%= f.label :Gender %><br />
-          <%= f.text_field :gender, autofocus: true, autocomplete: "gender" %>
-        </div>
-
-        <div class="field">
-          <%= f.label :age %><br />
-          <%= f.text_field :age, autofocus: true, autocomplete: "age" %>
-        </div>
-
-        <div class="field">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-        </div>
-
-        <div class="field">
-          <%= f.label :password %>
-          <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-          <% end %><br />
-          <%= f.password_field :password, autocomplete: "new-password" %>
-        </div>
-
-        <div class="field">
-          <%= f.label :password_confirmation %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-        </div>
-
-        <div class="actions">
-          <%= f.submit "Sign up" %>
-        </div>
-      <% end %>
-
-      <%= render "devise/shared/links" %>
-    </div>
-    <div class="col-md-6">
-      <div class="signup-img">
-         <%= image_tag("policy2.jpeg",class: 'd-block w-100 rounded') %>
       </div>
     </div>
-</div>
+  </div>
 
-</div>
 
