@@ -1,0 +1,5 @@
+<%= form_with(url: otp_verification_path, method: :post) do |form| %>
+  <%= form.label :OTP %>
+  <%= form.text_field :otp %>
+  <%= form.submit "submit OTP" %>
+<% end %>
