@@ -1,5 +1,4 @@
 
-
 <p>
   <strong>Title:</strong>
   <%= @policy.title %>
@@ -10,5 +9,10 @@
   <%= @policy.description %>
 </p>
 
-<%= link_to 'Edit', edit_policy_path(@policy) %> |
-<%= link_to 'Back', policies_path %>
+<div class="company-section">
+  <%= render 'companies/companies'%>
+</div>
+
+
+<%#= link_to 'Edit', edit_policy_path(@policy) %>
+<%#= link_to 'Back', root_path %>

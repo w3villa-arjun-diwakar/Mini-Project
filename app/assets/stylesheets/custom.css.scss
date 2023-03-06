@@ -110,3 +110,18 @@
 .omniauth-styling a{
     margin: 0 20px;
 }
+
+
+// Sidebar
+
+.sidebar{
+    width: 280px;
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    top: 12%;
+}
+
+.admin-main-content{
+    display: flex;
+}

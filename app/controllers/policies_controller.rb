@@ -1,6 +1,6 @@
 class PoliciesController < ApplicationController
   before_action :set_policy, only: %i[ show edit update destroy ]
-  before_action :require_user, only: [:edit, :update, :show, :destory]
+  before_action :require_user, only: [:show]
 
   # GET /policies or /policies.json
   def index
@@ -9,6 +9,7 @@ class PoliciesController < ApplicationController
 
   # GET /policies/1 or /policies/1.json
   def show
+    @companies = @policy.companies
   end
 
   # GET /policies/new

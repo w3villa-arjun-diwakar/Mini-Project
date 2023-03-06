@@ -1,0 +1,14 @@
+<h1>Users</h1>
+<div class="row">
+<% @users.each do |user| %>
+<div class="col-md-3">
+  <div class="card mb-3">
+    <div class="card-body">
+      <%= image_tag("user.png",class: 'card-img-top') %>
+      <b class="card-title"><%= user.name %></b>
+      <%= link_to 'Show'%>
+    </div>
+  </div>
+</div>
+<% end %>
+</div>
