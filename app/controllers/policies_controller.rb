@@ -1,6 +1,6 @@
 class PoliciesController < ApplicationController
   before_action :set_policy, only: %i[ show edit update destroy ]
-  before_action :require_user, only: [:show]
+  before_action :require_admin, only: [:index,:edit , :update , :destroy]
 
   # GET /policies or /policies.json
   def index
@@ -68,5 +68,12 @@ class PoliciesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def policy_params
       params.require(:policy).permit(:title, :description)
+    end
+
+    def require_admin
+      if !current_user.admin?
+          flash[:alert] = "You are not the authorize user!"
+          redirect_to root_path
+      end
     end
 end

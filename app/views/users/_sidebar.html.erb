@@ -1,0 +1,25 @@
+
+<div class="sidebar d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 250px;">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+      <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+      <span class="fs-4">Admin Panel</span>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+         <li class="sidebar-icon">
+            <i class="material-icons">home</i><%= link_to 'Home', root_path , class:"nav-link text-white"%>
+         </li>
+        <li class="sidebar-icon">
+            <i class="material-icons">ad_units</i><%= link_to 'Add Policy', new_policy_path , class:"nav-link text-white"%>
+        </li>
+         <li class="sidebar-icon">
+             <i class="material-icons">category</i><%= link_to 'Add Company', new_company_path , class:"nav-link text-white"%>
+        </li>
+      </li>
+    </ul>
+    
+   
+  </div>
+ 
+<%#= link_to 'policies', policies_path %>

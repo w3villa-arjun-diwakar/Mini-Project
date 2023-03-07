@@ -1,6 +1,6 @@
 <section class="admin-main-content">
     <div class="admin-sidebar">
-        <%=render 'admins/sidebar'%>
+        <%=render 'users/sidebar'%>
     </div>
     <div class='row ms-auto'>  
         <div class='col-md-4'>
@@ -8,7 +8,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Users</h5>
                     <p class="card-text"><%= pluralize(User.count ,"User")%></p>
-                    <a><%= link_to 'See Users', users_index_path, class:"btn btn-info"%> </a>
+                    <a><%= link_to 'See Users', users_path, class:"btn btn-info"%> </a>
                 </div>
             </div>
         </div>

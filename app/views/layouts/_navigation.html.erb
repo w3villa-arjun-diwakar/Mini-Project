@@ -9,15 +9,20 @@
         <li class="nav-item nav-link ">
           <%= link_to 'Home', root_path , class:"text-decoration-none" %>
         </li>
-     
-        <% if user_signed_in?%>
+        
+        <% if current_user%>
         <li class="nav-item dropdown nav-link ">
           <a class="av-link dropdown-togglen text-decoration-none" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Profile
+           
+            <%= "(Admin)" if current_user.admin? %> <%= current_user.name %>
           </a>
           <ul class="dropdown-menu">
+            <li><%= link_to 'View Profile', user_path(current_user), class:"dropdown-item" %></li>
             <li><%= link_to 'Edit Profile', edit_user_registration_path, class:"dropdown-item" %></li>
             <%= button_to 'Sign Out', destroy_user_session_path , method: :delete ,class:"dropdown-item" %>
+            <% if current_user.admin?%>
+            <li><%= link_to 'Dashboard', dashboard_path ,class:"dropdown-item" %></li>
+            <% end %>
           </ul>
         </li>
         <% else%>

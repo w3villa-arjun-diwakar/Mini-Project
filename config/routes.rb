@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   root 'pages#home'
-  get 'users/index'
-  
+  # get "/users", to: 'users#index'
+  # get "/users/:id", to: 'users#show'
+  get "/dashboard", to:"users#admin"
   resources :companies
   resources :policies
   get "otp_form", to:"pages#otp_form"
@@ -9,12 +10,5 @@ Rails.application.routes.draw do
   get "otp_verify", to:"pages#otp_verify"
   post "otp_verification", to:"pages#otp_verification"
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-  get "users/admin", to:"admins#admin_show"
-  
-  
-  # namespace :admin do
-  #   resources :users
-  # end
-  
- 
+  resources :users ,only: [:index, :show]
 end

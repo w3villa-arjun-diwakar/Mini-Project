@@ -1,5 +1,6 @@
 class CompaniesController < ApplicationController
   before_action :set_company, only: %i[ show edit update destroy ]
+  before_action :require_admin, only: [:index, :edit , :update , :destroy]
 
   # GET /companies or /companies.json
   def index
@@ -66,5 +67,12 @@ class CompaniesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def company_params
       params.require(:company).permit(:company_name, :plan_info, :cover, :premium)
+    end
+
+    def require_admin
+      if !current_user.admin?
+          flash[:alert] = "You are not the authorize user!"
+          redirect_to root_path
+      end
     end
 end
