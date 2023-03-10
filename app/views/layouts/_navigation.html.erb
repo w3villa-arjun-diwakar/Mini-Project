@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container">
-    <a class="navbar-brand fs-3" href="#"><strong>Policy</strong><i>Please</i></a>
+    <a class="navbar-brand fs-3" href=""><strong>Policy</strong><i>Please</i></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -12,11 +12,11 @@
         
         <% if current_user%>
         <li class="nav-item dropdown nav-link ">
-          <a class="av-link dropdown-togglen text-decoration-none" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="av-link dropdown-toggle text-decoration-none" href="#" role="button" data-bs-toggle="dropdown">
            
             <%= "(Admin)" if current_user.admin? %> <%= current_user.name %>
           </a>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu text-center " ,aria-labelledby="dropdownMenuLink">
             <li><%= link_to 'View Profile', user_path(current_user), class:"dropdown-item" %></li>
             <li><%= link_to 'Edit Profile', edit_user_registration_path, class:"dropdown-item" %></li>
             <%= button_to 'Sign Out', destroy_user_session_path , method: :delete ,class:"dropdown-item" %>
@@ -34,3 +34,4 @@
     </div>
   </div>
 </nav>
+

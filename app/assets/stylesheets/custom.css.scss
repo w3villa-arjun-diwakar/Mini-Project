@@ -1,11 +1,15 @@
 @import 'bootstrap/dist/css/bootstrap';
 
+body {
+    background-color: lightgrey;
+}
+
 *{
     margin:0;
     padding:0;
     box-sizing: border-box;
-  
 }
+
 .navbar strong{
    color:#6969b5;
    
@@ -42,6 +46,7 @@
     margin: 0;
     display: flex;
     align-items: center;
+    z-index: 5;
 }
 
 .chat-button p{
@@ -130,3 +135,25 @@
     display: flex;
 }
 
+.user-container{
+    background: whitesmoke;
+    border-radius: 25px;
+    box-shadow: 0 0.5rem 1rem rgba(7, 31, 3, 1) !important;
+}
+
+.policy-heading{
+    border: 2px solid black;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.company-table{
+    // border: 2px solid black;
+    width: 100%;
+    background: cornsilk;
+}
+
+.company-show{
+    border: 1px solid black;
+    background: antiquewhite;
+}

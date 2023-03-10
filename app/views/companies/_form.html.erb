@@ -1,37 +1,51 @@
-<%= form_with(model: company) do |form| %>
-  <% if company.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(company.errors.count, "error") %> prohibited this company from being saved:</h2>
-
-      <ul>
-        <% company.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+<div class="container">
+ <div class="row justify-content-center">
+    <div class="col-10">
+      <%= form_with(model: company, class:"shadow p-5 mb-3 bg-info rounded") do |form| %>
+        <% if company.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(company.errors.count, "error") %> prohibited this company from being saved:</h2>
+            <ul>
+              <% company.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+              <% end %>
+            </ul>
+          </div>
         <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :company_name %>
-    <%= form.text_field :company_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :plan_info %>
-    <%= form.text_field :plan_info %>
-  </div>
-
-  <div class="field">
-    <%= form.label :cover %>
-    <%= form.text_field :cover %>
-  </div>
-
-  <div class="field">
-    <%= form.label :premium %>
-    <%= form.text_field :premium %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+        <div class="form-group row">
+          <%= form.label :company_name , class:"col-2 col-form-label text-dark"%>
+          <div  class="col-10">
+            <%= form.text_field :company_name , class:"form-control", placeholder:"Company Name"%>
+           </div>
+        </div><br>
+        <div class="form-group row">
+          <%= form.label :plan_info , class:"col-2 col-form-label text-dark"%>
+          <div  class="col-10">
+            <%= form.text_field :plan_info, class:"form-control", placeholder:"Plan Information" %>
+          </div>
+        </div><br>
+        <div class="form-group row">
+          <%= form.label :cover , class:"col-2 col-form-label text-dark" %>
+          <div  class="col-10">
+           <%= form.text_field :cover , class:"form-control", placeholder:"Cover"%>
+          </div>
+        </div><br>
+        <div class="form-group row">
+          <%= form.label :premium , class:"col-2 col-form-label text-dark"%>
+          <div  class="col-10">
+            <%= form.text_field :premium , class:"form-control", placeholder:"Premium"%>
+          </div>
+        </div><br>
+        <div class="form-group row">
+          <%= form.label :policy, class:"col-2 col-form-label text-dark" %>
+          <div  class="col-10">
+          <%= form.collection_select(:policy_id, Policy.all, :id, :title,
+          { prompt: "Make your selection from the list below"}, {size: 3 , class:"form-select"}) %>
+          </div>
+        </div><br>
+        <div class="actions form-group row justify-content-center">
+          <%= form.submit class:"btn btn-outline-light btn-lg " , style:"width: fit-content; "%>
+        </div>
+      <% end %>
+</div>

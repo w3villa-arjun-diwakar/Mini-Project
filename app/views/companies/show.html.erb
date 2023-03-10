@@ -1,24 +1,25 @@
-<p id="notice"><%= notice %></p>
+<div class="container company-show">
+  <p>
+    <strong>Company name:</strong>
+    <%= @company.company_name %>
+  </p>
 
-<p>
-  <strong>Company name:</strong>
-  <%= @company.company_name %>
-</p>
+  <p>
+    <strong>Plan info:</strong>
+    <%= @company.plan_info %>
+  </p>
 
-<p>
-  <strong>Plan info:</strong>
-  <%= @company.plan_info %>
-</p>
+  <p>
+    <strong>Cover:</strong>
+    <%= @company.cover %>
+  </p>
 
-<p>
-  <strong>Cover:</strong>
-  <%= @company.cover %>
-</p>
-
-<p>
-  <strong>Premium:</strong>
-  <%= @company.premium %>
-</p>
-
-<%= link_to 'Edit', edit_company_path(@company) %> |
-<%= link_to 'Back', companies_path %>
+  <p>
+    <strong>Premium:</strong>
+    <%= @company.premium %>
+  </p>
+  <% if current_user.admin? %>
+      <%= link_to 'Edit', edit_company_path(@company)%></a> |
+      <%= link_to 'Back', companies_path%>
+  <% end %> 
+</div>

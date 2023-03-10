@@ -1,27 +1,37 @@
-<%= form_with(model: policy) do |form| %>
-  <% if policy.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(policy.errors.count, "error") %> prohibited this policy from being saved:</h2>
+<div class="container">
+  <div class="row justify-content-center">
+      <div class="col-10">
+        <%= form_with(model: policy, class:"shadow p-5 mb-3 bg-info rounded") do |form| %>
+          <% if policy.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(policy.errors.count, "error") %> prohibited this policy from being saved:</h2>
 
-      <ul>
-        <% policy.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+              <ul>
+                <% policy.errors.each do |error| %>
+                  <li><%= error.full_message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="form-group row">
+            <%= form.label :title, class:"col-2 col-form-label text-light" %>
+            <div  class="col-10">
+              <%= form.text_field :title, class:"form-control", placeholder:"Policy Title" %>
+            </div>  
+          </div><br>
+
+          <div class="form-group row">
+            <%= form.label :description ,class:"col-2 col-form-label text-light"%>
+            <div  class="col-10">
+              <%= form.text_field :description , class:"form-control", placeholder:"Description"  %>
+            </div>  
+          </div><br>
+
+          <div class="actions form-group row justify-content-center">
+            <%= form.submit class:"btn btn-outline-light btn-lg ", style:"width: fit-content;"%>
+          </div>
         <% end %>
-      </ul>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
