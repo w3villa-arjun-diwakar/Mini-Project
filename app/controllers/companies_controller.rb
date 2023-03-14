@@ -1,6 +1,7 @@
 class CompaniesController < ApplicationController
   before_action :set_company, only: %i[ show edit update destroy ]
-  before_action :require_admin, only: [:index, :edit , :update , :destroy]
+  before_action :require_user, except:[ :index]
+  before_action :require_admin, only: [:edit , :update , :destroy]
 
   # GET /companies or /companies.json
   def index

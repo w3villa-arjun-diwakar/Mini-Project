@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # get "/users", to: 'users#index'
   # get "/users/:id", to: 'users#show'
   get "/dashboard", to:"users#admin"
+  get "/user_policies", to:"users#user_policies"
   resources :companies
   resources :policies
   get "otp_form", to:"pages#otp_form"

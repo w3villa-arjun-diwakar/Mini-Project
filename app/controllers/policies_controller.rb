@@ -1,6 +1,6 @@
 class PoliciesController < ApplicationController
   before_action :set_policy, only: %i[ show edit update destroy ]
-  before_action :require_admin, only: [:index,:edit , :update , :destroy]
+  before_action :require_admin, only: [:index,:edit ,:update , :destroy]
 
   # GET /policies or /policies.json
   def index

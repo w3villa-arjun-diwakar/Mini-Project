@@ -6,8 +6,16 @@ class ApplicationController < ActionController::Base
      def logged_in?
           !!current_user 
      end
+     def require_user
+          if !logged_in? 
+              flash[:alert] = "you must be logged in"
+          #     redirect_to user_session_path
+               redirect_to companies_path
+          end
+     end
+
      def configure_permitted_parameters
           devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:name, :email, :password, :phone, :gender, :age)}
-          devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:name, :email, :password, :current_password, :phone, :gender, :age)}
+          devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:name, :email, :password, :current_password, :phone, :gender, :age, :avatar)}
      end
 end

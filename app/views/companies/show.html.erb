@@ -18,8 +18,9 @@
     <strong>Premium:</strong>
     <%= @company.premium %>
   </p>
+  <%= link_to 'Back', companies_path%> |
+  <%= link_to 'Buy Now'%> |
   <% if current_user.admin? %>
-      <%= link_to 'Edit', edit_company_path(@company)%></a> |
-      <%= link_to 'Back', companies_path%>
+      <%= link_to 'Edit', edit_company_path(@company)%></a>     
   <% end %> 
 </div>
