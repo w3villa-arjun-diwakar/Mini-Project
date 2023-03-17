@@ -31,6 +31,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  
 end
 
 group :development do
@@ -60,3 +61,9 @@ gem "omniauth-rails_csrf_protection"
 gem 'phonelib'
 gem 'twilio-ruby'
 
+
+gem "stripe", "~> 8.3"
+gem "pay", "~> 6.3"
+gem "dotenv-rails"
+
+gem "jquery-rails", "~> 4.5"

@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   root 'pages#home'
-  # get "/users", to: 'users#index'
-  # get "/users/:id", to: 'users#show'
   get "/dashboard", to:"users#admin"
   get "/user_policies", to:"users#user_policies"
   resources :companies
@@ -12,4 +10,9 @@ Rails.application.routes.draw do
   post "otp_verification", to:"pages#otp_verification"
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   resources :users ,only: [:index, :show]
+  # post 'checkout/create', to:'checkout#create'
+  # get 'checkout', to:'checkout#show'
+  resources :checkout, only: [:create]
+  get 'checkout/success', to:'checkout#success'
+  # get 'billing', to:'billing#show'
 end

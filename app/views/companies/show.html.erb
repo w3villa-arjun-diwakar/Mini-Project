@@ -19,8 +19,8 @@
     <%= @company.premium %>
   </p>
   <%= link_to 'Back', companies_path%> |
-  <%= link_to 'Buy Now'%> |
+  <%= button_to 'Buy Now',checkout_index_path , params: {id: @company.id}, remote: true %> 
   <% if current_user.admin? %>
-      <%= link_to 'Edit', edit_company_path(@company)%></a>     
+      |<%= link_to 'Edit', edit_company_path(@company) %></a>     
   <% end %> 
 </div>
