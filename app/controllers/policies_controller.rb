@@ -27,7 +27,7 @@ class PoliciesController < ApplicationController
 
     respond_to do |format|
       if @policy.save
-        format.html { redirect_to policy_url(@policy), notice: "Policy was successfully created." }
+        format.html { redirect_to policy_url(@policy), notice: "Policy was successfully created."}
         format.json { render :show, status: :created, location: @policy }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -67,7 +67,7 @@ class PoliciesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def policy_params
-      params.require(:policy).permit(:title, :description)
+      params.require(:policy).permit(:title, :description, :image)
     end
 
     def require_admin

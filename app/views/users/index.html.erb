@@ -4,7 +4,12 @@
 <div class="col-md-3">
   <div class="card mb-3">
     <div class="card-body">
-      <%= image_tag("user.png",class: 'card-img-top') %>
+      <% if user.avatar_thumbnail.present?%>
+       <%= image_tag(user.avatar_thumbnail, class:"card-img-top policy-images ") %> 
+      <% else %>
+         <%= image_tag("user2.png", class:"card-img-top policy-images policy-images")%> 
+      <%end %>
+
       <b class="card-title"><%= user.name %></b>
       <div class="user-buttons">
         <%= link_to 'Show', user_path(user), class:"btn btn-primary"%>

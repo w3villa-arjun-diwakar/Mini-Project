@@ -4,7 +4,6 @@ class CheckoutController < ApplicationController
     Stripe.api_key = 'sk_test_51MlUwASCijQYJMOPQOshlLogVZSBfNDOmpCEnvGEUp8QgvjZqQPwSU1Qozw8zyB7SdTbFkUygrqXW0GNYrzYpWOK00gcDjNzAc'
     def create   
         @company = Company.find(params[:id])
-        
         session[:company] = @company
         
         @session = Stripe::Checkout::Session.create({
