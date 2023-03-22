@@ -28,7 +28,7 @@ class User < ApplicationRecord
     if avatar.attached?
       avatar.variant(resize:"").processed 
     else
-      "/user2.png"
+      "/user.png"
     end
   end
 

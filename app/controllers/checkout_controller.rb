@@ -31,6 +31,7 @@ class CheckoutController < ApplicationController
         @user_company.user_id = current_user.id 
         @user_company.company_id = @company_id
         if @user_company.save
+            InsuranceMailer.with(user: current_user,company:@company).insurance_purchased.deliver_later
             flash[:notice] ="Successfully purchased"
             redirect_to user_policies_path
         else 
@@ -39,4 +40,5 @@ class CheckoutController < ApplicationController
         end
        
     end
+
 end

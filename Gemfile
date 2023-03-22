@@ -60,10 +60,8 @@ gem 'omniauth-google-oauth2'
 gem "omniauth-rails_csrf_protection"
 gem 'phonelib'
 gem 'twilio-ruby'
-
-
 gem "stripe", "~> 8.3"
 gem "pay", "~> 6.3"
 gem "dotenv-rails"
-
 gem "jquery-rails", "~> 4.5"
+gem "letter_opener", group: :development

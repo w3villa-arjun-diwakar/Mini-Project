@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
     config.autoloader = :classic
 
     protected
+
      def logged_in?
           !!current_user 
      end
