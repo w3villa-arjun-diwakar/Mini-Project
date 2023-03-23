@@ -33,7 +33,7 @@ class CheckoutController < ApplicationController
         if @user_company.save
             InsuranceMailer.with(user: current_user,company:@company).insurance_purchased.deliver_later
             flash[:notice] ="Successfully purchased"
-            redirect_to user_policies_path
+            redirect_to root_path
         else 
             flash[:notice] ="Enter again"
             redirect_to checkout_index_path

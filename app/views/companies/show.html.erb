@@ -18,9 +18,24 @@
     <strong>Premium:</strong>
     <%= @company.premium %>
   </p>
-  <%= link_to 'Back', companies_path%> |
-  <%= button_to 'Buy Now',checkout_index_path , params: {id: @company.id}, remote: true %> 
-  <% if current_user.admin? %>
-      |<%= link_to 'Edit', edit_company_path(@company) %></a>     
-  <% end %> 
+  
+  <div class="company-show-button" style="display:flex;">
+    <p>
+    <% if @company.pdf.present?%>
+            <%=link_to "Download PDF",rails_blob_path(@company.pdf) , class:"btn btn-warning"%> 
+    <% end %>
+    </p>
+    <p>
+    <%#= link_to 'Back', companies_path, class:"btn btn-primary"%> 
+    </p>
+    <p>
+    <%= button_to 'Buy Now',checkout_index_path , params: {id: @company.id}, remote: true , class:"btn btn-primary" %> 
+    </p>
+    <p>
+    <% if current_user.admin? %>
+      <%= link_to 'Edit', edit_company_path(@company) , class:"btn btn-info"%></a>  
+      <%= button_to 'Delete', company_path(@company), method: :delete , class:"btn btn-danger"%></a>     
+    <% end %> 
+    </p>
+  </div>
 </div>

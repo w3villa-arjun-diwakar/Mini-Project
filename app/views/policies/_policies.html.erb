@@ -1,20 +1,21 @@
-
-<div class="row">
-<% @policies.each do |policy| %>
-<div class="col-md-3">
-  <div class="card mb-3">
-    <div class="card-body">
-      <% if policy.image.present?%>
-       <%= image_tag(policy.image, class:"card-img-top policy-images") %> 
-      <% else %>
-         <%= image_tag("policy.jpeg", class:"card-img-top policy-images")%> 
-      <%end %>
-      <b class="card-title"><%= policy.title %></b>
-      <%= link_to 'Show', policy , class:"btn btn-primary "%>
+<div class="container">
+  <div class="row">
+  <% @policies.each do |policy| %>
+  <div class="col-md-3">
+    <div class="card mb-3">
+      <div class="card-body">
+        <% if policy.image.present?%>
+        <%= image_tag(policy.image, class:"card-img-top policy-images") %> 
+        <% else %>
+          <%= image_tag("policy.jpeg", class:"card-img-top policy-images")%> 
+        <%end %>
+        <b class="card-title"><%= policy.title %></b>
+        <%= link_to 'Show', policy , class:"btn btn-primary "%>
+      </div>
     </div>
   </div>
-</div>
-<% end %>
+  <% end %>
+  </div>
 </div>
 
 
