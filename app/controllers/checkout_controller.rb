@@ -32,7 +32,7 @@ class CheckoutController < ApplicationController
         @user_company.company_id = @company_id
         if @user_company.save
             flash[:notice] ="Successfully purchased"
-            redirect_to user_policies_path
+            redirect_to root_path
         else 
             flash[:notice] ="Enter again"
             redirect_to checkout_index_path

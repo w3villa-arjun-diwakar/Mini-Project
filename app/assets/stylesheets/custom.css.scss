@@ -167,3 +167,84 @@ body {
 .policy-images{
     height: 170px;
 }
+.company-show-button{
+    display:flex;
+}
+.company-show-button p a{
+    margin-left: 0;
+    margin-right: 5px;
+}
+
+.policy-please-divider{
+    background: #f95d2e;
+    height: 1px;
+    position: relative;
+}
+.product-heading{
+    width: 100%;
+    height: 1px;
+    z-index: 1;
+    background-color: #f95d2e;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 100%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+}
+
+.product-heading p {
+    width: 230px;
+    display: block;
+    z-index: 2;
+    text-align: center;
+    background: #f95d2e;
+    color: #fff;
+    border-radius: 4px;
+    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 2px 5px 4px;
+    top: -15px;
+}
+
+.home-cards{
+    border-right: 5px solid #23a5c9;
+    border-bottom: 1px solid #f95d2e;
+    border-radius: 0px;
+    margin-top: 10px;
+}
+
+.countPoint {
+    position: absolute;
+    font-size: 112px;
+    left: 0px;
+    top: -35px;
+    color: #eff2f2;
+    z-index: 1;
+    font-weight: 600;
+    margin-left:20px;
+  }
+.card-block {
+    margin-left: auto;
+}
+
+.card-block .slider-heading{
+    // margin-left: 70%;
+    font-size: 16px;
+}
+.card-block .list-p{
+    font-size: 12px;
+    margin: 0;
+}
+.card-section-second{
+    width: 50%;
+    margin: auto;
+}
+
+.card-section-first{
+    width: 90%;
+    margin: auto;
+}

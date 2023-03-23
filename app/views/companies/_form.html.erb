@@ -37,6 +37,12 @@
             <%= form.text_field :premium , class:"form-control", placeholder:"Premium"%>
           </div>
         </div><br>
+         <div class="form-group row">
+            <%= form.label :pdf, class:"col-2 col-form-label text-dark" %>
+            <div  class="col-10">
+              <%= form.file_field :pdf, class:"form-control" %>
+            </div>  
+          </div><br>
         <div class="form-group row">
           <%= form.label :policy, class:"col-2 col-form-label text-dark" %>
           <div  class="col-10">
