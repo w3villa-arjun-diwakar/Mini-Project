@@ -65,3 +65,5 @@ gem "pay", "~> 6.3"
 gem "dotenv-rails"
 gem "jquery-rails", "~> 4.5"
 gem "letter_opener", group: :development
+gem 'will_paginate', '~> 3.3'
+gem 'ransack'

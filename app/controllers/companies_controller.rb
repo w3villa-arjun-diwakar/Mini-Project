@@ -5,7 +5,8 @@ class CompaniesController < ApplicationController
 
   # GET /companies or /companies.json
   def index
-    @companies = Company.all
+    # @companies = Company.all
+    @companies = Company.paginate(page: params[:page], per_page: 5)
   end
 
   # GET /companies/1 or /companies/1.json

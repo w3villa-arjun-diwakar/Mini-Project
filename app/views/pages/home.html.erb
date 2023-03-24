@@ -1,6 +1,6 @@
 
 <section class="container">
-    <div class="home-content mt-5">
+    <div class="home-content">
         <div class='row'>
             <div class="col-md-6"><p class="welcome-text">Let's find you<br>the<b> Best Insurance</b></p>
                 <div class="row"> 
@@ -43,8 +43,16 @@
 </section>
 
 <section class="policies">
-    <h1 class="text-center mt-5">Types of Policies</h1><br>
+     <div class="row mt-5">
+        <div class="col-lg-12 policy-please-divider">
+            <div class="product-heading">
+                <p>Available Policies<p>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid mt-5">
         <%= render "policies/policies"%>
+    </div>
 </section>
 <section class="conatiner why-policy-please mt-4">
     <div class="row">
@@ -54,8 +62,7 @@
             </div>
         </div>
     </div>
-   
-    <div class="row mt-4 card-section-first">
+    <div class="row mt-4">
         <div class="col-md-4">
             <div class="card home-cards">
           		<p class="countPoint">1</p>

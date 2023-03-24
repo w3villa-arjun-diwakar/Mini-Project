@@ -8,8 +8,11 @@
   <%= @policy.description %>
 </p>
 </div>
-<div class="company-section">
+<div class="container company-section">
   <%= render 'companies/companies'%>
+  <div class="flickr_pagination">
+        <%= will_paginate @companies, :container => false %>
+  </div>
 </div>
 
 
