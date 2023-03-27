@@ -180,8 +180,6 @@ GEM
       nio4r (~> 2.0)
     racc (1.6.2)
     rack (2.2.6.2)
-    rack-mini-profiler (2.3.4)
-      rack (>= 1.2.0)
     rack-protection (3.0.5)
       rack
     rack-proxy (0.7.6)
@@ -316,7 +314,6 @@ DEPENDENCIES
   pay (~> 6.3)
   phonelib
   puma (~> 5.0)
-  rack-mini-profiler (~> 2.0)
   rails (~> 6.1.7, >= 6.1.7.2)
   ransack
   sass-rails (>= 6)

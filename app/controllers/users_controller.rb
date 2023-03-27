@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :require_same_user
+  before_action :current_user
   before_action :require_admin, only: [:index,:admin]
   def index
     @users = User.all
@@ -18,15 +18,10 @@ class UsersController < ApplicationController
   end
 
   private
-  def require_same_user
-    if current_user != current_user or !current_user.admin?
-        flash[:alert] = "You are not the author"
-        redirect_to root_path
-    end
-  end
+
 
   def require_admin
-    if !current_user.admin?
+    if !current_user.admin? 
         flash[:alert] = "You are not the authorize user!"
         redirect_to root_path
     end
