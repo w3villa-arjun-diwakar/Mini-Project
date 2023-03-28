@@ -1,6 +1,6 @@
 class PoliciesController < ApplicationController
   before_action :set_policy, only: %i[ show edit update destroy ]
-  before_action :require_user , except:[:show]
+  # before_action :require_user 
   before_action :require_admin, only: [:index,:edit ,:update , :destroy]
   
 
@@ -74,7 +74,7 @@ class PoliciesController < ApplicationController
     end
 
     def require_admin
-      if !current_user.admin?
+      if  !current_user.admin?
           flash[:alert] = "You are not the authorize user!"
           redirect_to root_path
       end

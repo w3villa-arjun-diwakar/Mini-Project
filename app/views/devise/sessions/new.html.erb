@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container login-container">
   <div class="row">
     <div class="col-md-6 login-form">
         <h2 class="text-center">Log in</h2>
@@ -15,7 +15,7 @@
           </div>
 
           <% if devise_mapping.rememberable? %>
-            <div class="field">
+            <div class="field form-group ">
               <%= f.check_box :remember_me  %>
               <%= f.label :remember_me %>
             </div>
@@ -25,18 +25,21 @@
             <%= f.submit "Log in", class:"btn btn-outline-dark btn-lg mt-2", style:"width: fit-content; " %>
           </div>
         <% end %>
-        <div class="form-group row">
-          <%= link_to 'Login with Phone number', otp_form_path %>
+        <hr><p>or</p>
+        <div class="form-group row ">
+          <ul><%= link_to 'Login with contact no.', otp_form_path , class:"otp-link justify-center"%></ul>
+          <hr>
+          <%= render "devise/shared/links" %>
         </div>
       </div>
       <div class="col-md-6 login-img">
           <div>
-            <%= image_tag("signup.jpg",class: 'd-block w-100') %>
+            <%= image_tag("loginimage.png",class: 'd-block w-100') %>
           </div>
       </div>
   </div>
 
-  <%= render "devise/shared/links" %>
+
 </div>
 
 
