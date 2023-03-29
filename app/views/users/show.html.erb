@@ -13,6 +13,8 @@
           <p class="card-text">Phone: <%=@user.phone%></p>
           <p class="card-text">Age: <%=@user.age%></p>
           <p class="card-text">Gender: <%=@user.gender%></p>
+          
+          <%= link_to 'Edit Profile',edit_user_registration_path,class:"btn btn-outline-warning" %>
         <p>
       </div>
     </div>
@@ -20,5 +22,5 @@
 </div>
      
 
-<%#= link_to 'Edit',edit_user_registration_path %>
+
 <%#= link_to 'Back', root_path %>

@@ -131,6 +131,13 @@ body {
     margin: 0 20px;
     margin-left: 0;
 }
+.otp-form{
+    border: 1px solid black;
+    padding: 20px;
+    width: fit-content;
+    background: white;
+    margin: auto;
+}
 
 
 // Sidebar
@@ -166,7 +173,7 @@ body {
 .company-table{
     // border: 2px solid black;
     width: 100%;
-    background: cornsilk;
+    background: white;
 }
 
 .company-show{
@@ -302,4 +309,12 @@ body {
     border: 1px solid blue;
     padding: 5px;
     text-decoration: none;
+}
+
+//forgot-password
+.forgot-password{
+    border: 1px solid black;
+    width: fit-content;
+    padding: 20px;
+    background: whitesmoke;
 }

@@ -1,33 +1,38 @@
-
 <p id="notice"><%= notice %></p>
-<table class="table table-hover company-table">
-  <thead>
-    <tr>
-      <th>Company name</th>
-      <th>Plan info</th>
-      <th>Cover</th>
-      <th>Premium(Rs.)</th>
-      <th>Action</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @companies.each do |company| %>
+<div class="box shadow rounded">
+  <table class="table table-hover table-striped table-bordered company-table">
+    <thead>
       <tr>
-        <td><%= company.company_name %></td>
-        <td><%= company.plan_info %></td>
-        <td><%= company.cover %></td>
-        <td><%= company.premium %></td>
-        <td><%= link_to 'Show', company %></td>
-        <td><%#= link_to 'Edit', edit_company_path(company) %></td>
-        <td><%#= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Company name</th>
+        <th>Plan info</th>
+        <th>Cover</th>
+        <th>Premium(Rs.)</th>
+        <%if current_user.admin?%>
+          <th>Policy Type</th>
+        <%end%>
+        <th>Action</th>
+        
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
+    <tbody>
+      <% @companies.each do |company| %>
+        <tr>
+          <td><%= company.company_name %></td>
+          <td><%= company.plan_info %></td>
+          <td><%= company.cover %></td>
+          <td><%= company.premium %></td>
+          <%if current_user.admin?%>
+            <td><%= company.policy.title %></td>
+          <%end%>
+          <td><%= link_to 'Show', company %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 <br>
+
 
 
 <%#= link_to 'New Company', new_company_path %>

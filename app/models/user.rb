@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :user_companies
   has_many :companies, through: :user_companies
+  validates :phone, presence: true , length: { minimum:10, maximum:10}
   # pay_customer stripe_attributes: :stripe_attributes
   # include Pay::Billable
 

@@ -1,6 +1,6 @@
 class PoliciesController < ApplicationController
   before_action :set_policy, only: %i[ show edit update destroy ]
-  # before_action :require_user 
+  before_action :require_user 
   before_action :require_admin, only: [:index,:edit ,:update , :destroy]
   
 
@@ -13,6 +13,8 @@ class PoliciesController < ApplicationController
   def show
     @companies = @policy.companies
     @companies = @companies.paginate(page: params[:page], per_page: 5)
+
+    
   end
 
   # GET /policies/new

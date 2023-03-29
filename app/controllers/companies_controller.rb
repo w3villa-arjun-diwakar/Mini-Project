@@ -1,12 +1,23 @@
 class CompaniesController < ApplicationController
   before_action :set_company, only: %i[ show edit update destroy ]
   before_action :require_user
-  before_action :require_admin, only: [:edit , :update , :destroy]
+  before_action :require_admin, only: [ :new, :create, :edit , :destroy]
 
   # GET /companies or /companies.json
   def index
-    # @companies = Company.all
-    @companies = Company.paginate(page: params[:page], per_page: 5)
+    @companies = Company.all
+    @q = Company.ransack(params[:q])
+    # @companies = @q.result(distinct: true)
+    @companies = @q.result(distinct: true).paginate(page: params[:page], per_page: 5)
+    # @companies = Company.paginate(page: params[:page], per_page: 5)
+  end
+
+  def policy_companies
+    @companies = Company.all
+    @q = Company.ransack(params[:q])
+    # @companies = @q.result(distinct: true)
+    @companies = @q.result(distinct: true).paginate(page: params[:page], per_page: 5)
+    # @companies = Company.paginate(page: params[:page], per_page: 5)
   end
 
   # GET /companies/1 or /companies/1.json

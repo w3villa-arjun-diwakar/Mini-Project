@@ -1,5 +1,12 @@
 <div class="container">
-    <h1>Companies</h1>
+ <h1>Companies</h1>
+<%if current_user.admin? %>
+  <%= search_form_for @q, url: :companies  do |f| %>
+    <%= f.search_field :company_name_cont%>
+    <%= f.submit %>
+  <% end %>
+<%end%>
+   
     <%= render 'companies/companies'%>
     <div class="flickr_pagination">
         <%= will_paginate @companies, :container => false %>

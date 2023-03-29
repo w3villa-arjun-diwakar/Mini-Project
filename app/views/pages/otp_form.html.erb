@@ -1,9 +1,11 @@
 
 <div class="container">
-  <%= form_with url: generate_otp_path, method: :post do |form| %>
-    <%= form.label :contact_number %>
-    <%= form.text_field :contact_number %>
-    <%= form.submit "Generate OTP" %>
-  <% end %>
+  <div class="otp-form">
+    <%= form_with url: generate_otp_path, method: :post do |form| %>
+      <%= form.label :contact_number %>
+      <%= form.text_field :contact_number %>
+      <%= form.submit "Generate OTP" %>
+    <% end %>
+</div>
 </div>
 
