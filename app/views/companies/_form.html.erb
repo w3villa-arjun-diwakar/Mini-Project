@@ -20,6 +20,12 @@
            </div>
         </div><br>
         <div class="form-group row">
+            <%= form.label :image, class:"col-2 col-form-label text-dark" %>
+            <div  class="col-10">
+              <%= form.file_field :image, class:"form-control" %>
+            </div>  
+          </div><br>
+        <div class="form-group row">
           <%= form.label :plan_info , class:"col-2 col-form-label text-dark"%>
           <div  class="col-10">
             <%= form.text_field :plan_info, class:"form-control", placeholder:"Plan Information" %>

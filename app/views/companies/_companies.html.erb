@@ -1,31 +1,38 @@
 <p id="notice"><%= notice %></p>
 <div class="box shadow rounded">
-  <table class="table table-hover table-striped table-bordered company-table">
+  <table class="table table-hover table-striped table-bordered company-table ">
     <thead>
-      <tr>
-        <th>Company name</th>
-        <th>Plan info</th>
-        <th>Cover</th>
-        <th>Premium(Rs.)</th>
-        <%if current_user.admin?%>
-          <th>Policy Type</th>
-        <%end%>
-        <th>Action</th>
-        
+      <tr class="table-primary">
+          <th><i>Company</i></th>
+          <th><i>Plan Info</i></th>
+          <th><i>Cover</i></th>
+          <th><i>Price(Rs.)</i></th>
+          <%if current_user.admin?%>
+            <th><i>Policy Type</i></th>
+          <%end%>
+          <th><i>Action</i></th>
       </tr>
     </thead>
 
     <tbody>
       <% @companies.each do |company| %>
         <tr>
-          <td><%= company.company_name %></td>
-          <td><%= company.plan_info %></td>
-          <td><%= company.cover %></td>
-          <td><%= company.premium %></td>
+          <td>
+            <% if company.image.present?%>
+              <%= image_tag(company.image, class:"card-img-top ") %> 
+            <% else %>
+              <%= image_tag("user2.png", class:"card-img-top")%> 
+            <%end %> 
+          </td>
+
+
+          <td><p><%= company.plan_info %></p></td>
+          <td><p><%= company.cover %></p></td>
+          <td><p><%= company.premium %><p></td>
           <%if current_user.admin?%>
-            <td><%= company.policy.title %></td>
+            <td><p><%= company.policy.title %></p></td>
           <%end%>
-          <td><%= link_to 'Show', company %></td>
+          <td><p><%= link_to 'Show', company, class:"btn btn-primary" %></p></td>
         </tr>
       <% end %>
     </tbody>

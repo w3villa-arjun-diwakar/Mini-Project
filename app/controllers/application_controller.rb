@@ -16,7 +16,12 @@ class ApplicationController < ActionController::Base
               redirect_to user_session_path
           end
      end
-
+     def after_sign_in 
+          if logged_in? 
+               flash[:alert] = "You successfully signed in"
+               redirect_to policy_path
+          end
+     end
      def configure_permitted_parameters
           devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:name, :email, :password, :phone, :gender, :age)}
           devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:name, :email, :password, :current_password, :phone, :gender, :age, :avatar)}

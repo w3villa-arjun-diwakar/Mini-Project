@@ -168,12 +168,32 @@ body {
     border: 2px solid black;
     text-align: center;
     border-radius: 20px;
+    // background-color: white;
 }
 
 .company-table{
     // border: 2px solid black;
     width: 100%;
     background: white;
+}
+
+.company-table tbody tr{
+    height:150px;
+}
+
+.company-table thead tr th {
+    vertical-align: center;    
+    // display: flex;
+}
+
+
+.company-table tbody tr p{
+    margin-top:50px;
+    font-weight: bold;
+}
+.company-table tbody tr img{
+    height: 150px;
+    padding: 20px;
 }
 
 .company-show{
