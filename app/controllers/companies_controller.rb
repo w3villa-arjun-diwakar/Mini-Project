@@ -7,21 +7,23 @@ class CompaniesController < ApplicationController
   def index
     @companies = Company.all
     @q = Company.ransack(params[:q])
-    # @companies = @q.result(distinct: true)
     @companies = @q.result(distinct: true).paginate(page: params[:page], per_page: 5)
-    # @companies = Company.paginate(page: params[:page], per_page: 5)
   end
 
   def policy_companies
     @companies = Company.all
     @q = Company.ransack(params[:q])
-    # @companies = @q.result(distinct: true)
     @companies = @q.result(distinct: true).paginate(page: params[:page], per_page: 5)
-    # @companies = Company.paginate(page: params[:page], per_page: 5)
   end
 
   # GET /companies/1 or /companies/1.json
   def show
+    if(params[:controller]=="users" && params[:action]=="user_policies")
+      @company=params[:id].to_i 
+    elsif(params[:controller]=="companies" && params[:action]=="index")
+        @company=params[:id].to_i 
+    end
+    
   end
 
   # GET /companies/new
@@ -83,7 +85,7 @@ class CompaniesController < ApplicationController
     end
 
     def require_admin
-      if !current_user.admin?
+      if current_user &&!current_user.admin?
           flash[:alert] = "You are not the authorize user!"
           redirect_to root_path
       end

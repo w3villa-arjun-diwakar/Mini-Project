@@ -1,6 +1,5 @@
 class PoliciesController < ApplicationController
   before_action :set_policy, only: %i[ show edit update destroy ]
-  before_action :require_user 
   before_action :require_admin, only: [:index,:edit ,:update , :destroy]
   
 
@@ -12,10 +11,10 @@ class PoliciesController < ApplicationController
   # GET /policies/1 or /policies/1.json
   def show
     @companies = @policy.companies
-    @companies = @companies.paginate(page: params[:page], per_page: 5)
-
-    
+    @companies = @companies.paginate(page: params[:page], per_page: 5) 
   end
+
+  
 
   # GET /policies/new
   def new
@@ -76,7 +75,7 @@ class PoliciesController < ApplicationController
     end
 
     def require_admin
-      if  !current_user.admin?
+      if  current_user && !current_user.admin?
           flash[:alert] = "You are not the authorize user!"
           redirect_to root_path
       end

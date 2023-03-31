@@ -1,0 +1,2 @@
+module LifeInsuranceUsersHelper
+end

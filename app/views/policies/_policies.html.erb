@@ -1,3 +1,4 @@
+
 <div class="container">
   <div class="row">
   <% @policies.each do |policy| %>
@@ -10,16 +11,20 @@
           <%= image_tag("policy.jpeg", class:"card-img-top policy-images")%> 
         <%end %>
         <b class="card-title"><%= policy.title %></b>
-        <%= link_to 'Show', policy , class:"btn btn-primary "%>
+        <% if policy.id ==1%>
+          <%= link_to 'Show', life_insurance_form_path , class:"btn btn-primary "%>
+        <%elsif policy.id ==2%>
+          <%= link_to 'Show', car_insurance_form_path , class:"btn btn-primary "%>
+        <%elsif policy.id ==4%>
+          <%= link_to 'Show', policy , class:"btn btn-primary "%>
+        <%elsif policy.id ==3%>
+          <%= link_to 'Show', policy , class:"btn btn-primary "%>
+        <%end%>
       </div>
     </div>
   </div>
   <% end %>
   </div>
 </div>
-
-
-
-
 
 <%#= link_to 'New Policy', new_policy_path %>

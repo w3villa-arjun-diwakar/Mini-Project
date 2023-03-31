@@ -7,7 +7,7 @@
           <th><i>Plan Info</i></th>
           <th><i>Cover</i></th>
           <th><i>Price(Rs.)</i></th>
-          <%if current_user.admin?%>
+          <%if current_user && current_user.admin?%>
             <th><i>Policy Type</i></th>
           <%end%>
           <th><i>Action</i></th>
@@ -29,10 +29,19 @@
           <td><p><%= company.plan_info %></p></td>
           <td><p><%= company.cover %></p></td>
           <td><p><%= company.premium %><p></td>
-          <%if current_user.admin?%>
+          <%if current_user && current_user.admin?%>
             <td><p><%= company.policy.title %></p></td>
           <%end%>
-          <td><p><%= link_to 'Show', company, class:"btn btn-primary" %></p></td>
+            <%if params[:controller]=="users" && params[:action]=="user_policies"%>
+
+              <td><p><%= link_to 'Show',company_path(id: company.id),class:"btn btn-primary" %></p></td>
+            <%elsif params[:controller]=="companies" && params[:action]=="index"%>
+
+              <td><p><%= link_to 'Show',company_path(id: company.id),class:"btn btn-primary" %></p></td>
+            <%else%>
+            <td><p><%= link_to 'Show',company_path,class:"btn btn-primary" %></p></td>
+
+          <%end%>
         </tr>
       <% end %>
     </tbody>

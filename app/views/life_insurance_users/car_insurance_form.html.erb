@@ -1,0 +1,33 @@
+<div class="container login-container">
+  <div class="row ">
+      <div class="col-md-6 car-insurance-form-image">
+        <%= image_tag("pankaj.avif",class: 'd-block w-100 life-insurance-form') %>
+      </div>
+         <div class="col-md-6">
+            <h4 class="text-muted">Compare & <b>Save upto 85%*</b> on Car Insurance</h4>
+            <p class="text-muted renew-in-2-minutes">Renew in 2 minutes</p>
+                <div class="login-box">
+                <form>
+                    <div class="user-box">
+                    <input type="text" name="" required="" style="text-transform: uppercase;">
+                    <label>Car Number </label>
+                    </div>
+                    <div class="user-box">
+                    <input type="text" name="" required="">
+                    <label>Full Name </label>
+                    </div>
+                    <div class="user-box">
+                    <input type="text" name="" required="">
+                    <label>Email </label>
+                    </div>
+                    <div class="user-box">
+                    <input type="text" name="" required="">
+                    <label>Mobile No. </label>
+                    </div>
+                      <%= link_to 'VIEW PRICES',Policy.find(2) %>  
+                </form>
+                </div>
+        
+        </div>
+  </div>
+</div>
