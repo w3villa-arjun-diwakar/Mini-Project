@@ -15,7 +15,7 @@ class LifeInsuranceUsersController < ApplicationController
         if @life_insurance_user.save
             redirect_to @policies.find(1)
         else 
-            flash[:notice]="wrong entry"
+            flash[:notice]="Fill all the details"
             redirect_to  life_insurance_form_path
         end
     end

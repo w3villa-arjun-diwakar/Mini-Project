@@ -363,8 +363,11 @@ body{
 }
 
 .company-show{
-    border: 1px solid black;
-    background: antiquewhite;
+  background-color:#dbe7ea;
+  width: 70%;
+  padding: 20px;
+  box-shadow: 18px 31px 5px -3px;
+  border: 2px solid #dedee8;
 }
 
 .profile-image{
@@ -511,4 +514,12 @@ body{
 
 .renew-in-2-minutes{
     margin: 20px 170px;
+}
+
+//Invoice mailer
+.invoice-table {
+  border: 1px solid black;
+  width: fit-content;
+  margin: auto;
+  height: 200px;
 }

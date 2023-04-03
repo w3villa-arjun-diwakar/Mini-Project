@@ -1,24 +1,42 @@
 <div class="container">
 <h1 class="text-center">Users</h1>
-<div class="row">
-<% @users.each do |user| %>
-<div class="col-md-3">
-  <div class="card mb-3">
-    <div class="card-body">
-      <% if user.avatar_thumbnail.present?%>
-       <%= image_tag(user.avatar_thumbnail, class:"card-img-top policy-images ") %> 
-      <% else %>
-         <%= image_tag("user2.png", class:"card-img-top policy-images policy-images")%> 
-      <%end %>
+<p id="notice"><%= notice %></p>
+<div class="box shadow rounded">
+  <table class="table table-hover table-striped table-bordered company-table ">
+    <thead>
+      <tr class="table-primary">
+          <th><i>Profile</i></th>
+          <th><i>Name</i></th>
+          <th><i>Email</i></th>
+          <th><i>Gender</i></th>
+          <th><i>Phone</i></th>
+          <th><i>Action</i></th>
+      </tr>
+    </thead>
 
-      <b class="card-title"><%= user.name %></b>
-      <div class="user-buttons">
-        <%= link_to 'Show', user_path(user), class:"btn btn-primary"%>
-        <%#= link_to 'Show', user_path(user), class:"btn btn-danger"%>
-      </div>  
-    </div>
-  </div>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td>
+            <% if user.avatar_thumbnail.present?%>
+              <%= image_tag(user.avatar_thumbnail, class:"card-img-top ") %> 
+            <% else %>
+              <%= image_tag("user2.png", class:"card-img-top")%> 
+            <%end %> 
+          </td>
+          <td><p><%= user.name %></p></td>
+          <td><p><%= user.email %></p></td>
+          <td><p><%= user.gender %><p></td>
+          <td><p><%= user.phone %><p></td>
+            <td><p><%= link_to 'Show',user_path(user),class:"btn btn-primary" %></p></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
-<% end %>
+<br>
 </div>
-</div>
+
+
+
+<%#= link_to 'New Company', new_company_path %>

@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   end
 
   def admin      
+    @users = User.all
   end
 
   def user_policies

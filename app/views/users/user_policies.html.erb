@@ -1,7 +1,11 @@
 <div class="container">
-  <h1>Your Policies</h1>
-
+  
+<%if current_user.companies.any?%>
+<h1 class="text-center">Your Policies</h1>
   <div class="company-section">
     <%= render 'companies/companies'%>
   </div>
+<%else%>
+<h1 class="text-center">You have not bought any policy yet!!</h1>
+<%end%>
 </div>

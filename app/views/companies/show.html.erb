@@ -16,10 +16,11 @@
 
   <p>
     <strong>Premium(Rs): </strong>
-    <%= @company.premium %>
+    
+    <%= @company.premium%>
   </p>
   
-  <div class="company-show-button mb-2" style="display:flex;">
+  <div class="company-show-button" style="display:flex;">
     <p>
     <% if @company.pdf.present?%>
             <%=link_to "Download PDF",rails_blob_path(@company.pdf) , class:"btn btn-warning"%> 
@@ -29,7 +30,7 @@
     <%= button_to 'Buy Now',checkout_index_path , params: {id: @company.id}, remote: true , class:"btn btn-primary" %> 
     </p>
     <p>
-    <% if current_user.admin? %>
+    <% if current_user && current_user.admin? %>
      <a><p><%= link_to 'Edit', edit_company_path(@company) , class:"btn btn-info"%> </p></a>
      <a><%= button_to 'Delete', company_path(@company), method: :delete , class:"btn btn-danger"%></a>
     <% end %> 

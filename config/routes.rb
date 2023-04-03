@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   # get 'checkout', to:'checkout#show'
   resources :checkout, only: [:create]
   get 'checkout/success', to:'checkout#success'
+  post 'renew', to:'checkout#renew'
+  get 'renew_payment', to:'checkout#renew_payment'
   get 'life_insurance/form', to:'life_insurance_users#life_insurance_form'
   post 'life_insurance/user', to:'life_insurance_users#create_life_insurance_user'
   get 'car_insurance/form', to:'life_insurance_users#car_insurance_form'
