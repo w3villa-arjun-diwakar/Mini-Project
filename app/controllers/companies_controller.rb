@@ -18,12 +18,15 @@ class CompaniesController < ApplicationController
 
   # GET /companies/1 or /companies/1.json
   def show
-    if(params[:controller]=="users" && params[:action]=="user_policies")
-      @company=params[:id].to_i 
-    elsif(params[:controller]=="companies" && params[:action]=="index")
-        @company=params[:id].to_i 
-    end
-    
+    @user_company=current_user.user_companies
+    # if(params[:controller]=="users" && params[:action]=="user_policies")
+    #   @company=params[:id].to_i 
+    # elsif(params[:controller]=="companies" && params[:action]=="index")
+    #     @company=params[:id].to_i 
+    # elsif(params[:controller]=="companies" && params[:action]=="show")
+    #   @company=params[:id].to_i 
+    # end
+   
   end
 
   # GET /companies/new

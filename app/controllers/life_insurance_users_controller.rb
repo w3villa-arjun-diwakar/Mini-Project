@@ -19,10 +19,4 @@ class LifeInsuranceUsersController < ApplicationController
             redirect_to  life_insurance_form_path
         end
     end
-
-    def car_insurance_form
-        
-    end
-    
-
 end
