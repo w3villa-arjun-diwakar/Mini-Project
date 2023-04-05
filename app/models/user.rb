@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  audited only: [:email]
   has_many :user_companies
   has_many :companies, through: :user_companies
   validates :phone, presence: true , length: { minimum:10, maximum:10}

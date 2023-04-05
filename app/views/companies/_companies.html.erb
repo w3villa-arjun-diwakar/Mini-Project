@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 <div class="box shadow rounded">
-  <table class="table table-hover table-striped table-bordered company-table ">
+  <table class="table table-hover table-bordered company-table ">
     <thead>
       <tr class="table-primary">
           <th><i>Company</i></th>
@@ -26,9 +26,9 @@
           </td>
           <td><p><%= company.plan_info %></p></td>
           <td><p><%= company.cover %></p>
-          <%#if params[:controller]=="users" && params[:action]=="user_policies"%>
-            <%# <i> *get 10% discount on renewal</i> %>
-          <%#end%>
+          <%if params[:controller]=="users" && params[:action]=="user_policies"%>
+             <i> *get 10% discount on renewal</i>
+          <%end%>
           </td>
           <td><p><%= company.premium %><p></td>
           <%if current_user && current_user.admin?%>

@@ -6,7 +6,7 @@
       <div class="col-md-6">
         <h4><strong class="text-primary">₹1 Crore</strong> life cover starting at <strong class="text-primary"> ₹490/month+</strong></h4>
         <div class="form-group row">
-          <%= form_with(url: life_insurance_user_path,method: :post ,class:"p-5 mb-3") do |form| %>
+          <%= form_with(url: life_insurance_user_path,method: :post ,html:{id: "lifeinsuranceform" },class:"p-3 mb-3") do |form| %>
             <div class="form-group row">
               <%= form.label :Name, class:"col-form-label" %>
                 <%= form.text_field :name, class:"form-control", placeholder:"Name" %>
@@ -33,3 +33,38 @@
       </div>
   </div>
 </div>
+
+<script>
+   $(document).on("turbolinks:load",function(){
+    $("#lifeinsuranceform").validate({
+     rules: {
+      "name":{
+          required: true
+      },
+      "phone":{
+          required: true,
+          minlength:10,
+          maxlength:10
+        
+      },
+      "age":{
+          required: true
+      },
+  },
+     messages: {
+      "name":{
+           required: "Please enter valid name"
+      },
+      "phone":{
+           required: "Please enter valid phone no.",
+           minlength: "minimum length is 10 digits",
+           maxlength: "maximum length is 10 digits",
+           
+      },
+      "age":{
+           
+      },
+    },
+});
+     });
+</script>

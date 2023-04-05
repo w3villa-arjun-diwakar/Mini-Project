@@ -26,12 +26,12 @@
             <%=link_to "Download PDF",rails_blob_path(@company.pdf) , class:"btn btn-warning"%> 
     <% end %>
     </p>
-  
-      <%if @company.user_companies.present? %>
+      <%if @company.user_companies.present?%>
       <p>
-      <%= button_to 'Buy Again',renew_path , params: {id: @company.id}, remote: true , class:"btn btn-primary" %> 
+      <%= button_to 'Renew',renew_path , params: {id: @company.id}, remote: true , class:"btn btn-success"  %> 
       </p>
       <% else%>
+        
       <%= button_to 'Buy Now',checkout_index_path , params: {id: @company.id}, remote: true , class:"btn btn-primary" %> 
       <% end %>
   

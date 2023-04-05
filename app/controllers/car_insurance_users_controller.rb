@@ -15,6 +15,7 @@ class CarInsuranceUsersController < ApplicationController
         if @car_insurance_user.save
             redirect_to @policies.find(2)
         else 
+            
             flash[:notice]="Fill all the details"
             redirect_to  car_insurance_form_path
         end
