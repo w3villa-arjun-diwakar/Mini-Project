@@ -1,4 +1,4 @@
-<script>
+
 var stripe = Stripe("<%= Rails.application.credentials[:stripe][:public_key] %>");
 
 stripe.redirectToCheckout({
@@ -6,7 +6,7 @@ stripe.redirectToCheckout({
 }).then(function (result){
     
 });
-</script>
+
 
 
 

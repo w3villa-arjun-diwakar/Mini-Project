@@ -11,13 +11,12 @@ class UsersController < ApplicationController
 
   def admin      
     @users = User.all
+    @companies = Company.all
   end
 
   def user_policies
     @user = current_user
     @companies = @user.companies
-   
-
   end
 
   private

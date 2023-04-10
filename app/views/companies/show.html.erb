@@ -1,45 +1,33 @@
-<div class="container company-show">
-  <p>
-    <strong>Company name: </strong>
-    <%= @company.company_name %>
-  </p>
-
-  <p>
-    <strong>Plan info: </strong>
-    <%= @company.plan_info %>
-  </p>
-
-  <p>
-    <strong>Cover: </strong>
-    <%= @company.cover %>
-  </p>
-
-  <p>
-    <strong>Premium(Rs): </strong>
-    
-    <%= @company.premium%>
-  </p>
-  
-  <div class="company-show-button" style="display:flex;">
-    <p>
-    <% if @company.pdf.present?%>
-            <%=link_to "Download PDF",rails_blob_path(@company.pdf) , class:"btn btn-warning"%> 
-    <% end %>
-    </p>
-      <%if @company.user_companies.present?%>
-      <p>
-      <%= button_to 'Renew',renew_path , params: {id: @company.id}, remote: true , class:"btn btn-success"  %> 
-      </p>
-      <% else%>
-        
-      <%= button_to 'Buy Now',checkout_index_path , params: {id: @company.id}, remote: true , class:"btn btn-primary" %> 
-      <% end %>
-  
-    <p>
-    <% if current_user && current_user.admin? %>
-     <a><p><%= link_to 'Edit', edit_company_path(@company) , class:"btn btn-info"%> </p></a>
-     <a><%= button_to 'Delete', company_path(@company), method: :delete , class:"btn btn-danger"%></a>
-    <% end %> 
-    </p>
-  </div>
+<div class="courses-container">
+	<div class="course">
+		<div class="course-preview">
+			<h6><%= @company.company_name %></h6>
+			<h2>₹<%=@company.premium%></h2>
+			  <% if @company.pdf.present?%>
+              <%=link_to "View Documentations",rails_blob_path(@company.pdf)%>
+        <% end %>
+		  </div>
+		<div class="course-info">
+			<h6><%= @company.policy.title %></h6>
+			<h2><%=@company.plan_info %></h2>
+            <%if @company.user_companies.present? && (@company.created_at + 11.months + 15.days < Time.now)%>
+              <i class="text-success"> *get 10% discount on renewal</i>
+            <% end%>
+          <div class="card-buttons">
+          
+            <%if @company.user_companies.present? && (@company.created_at + 11.months + 15.days < Time.now)%>
+              <%= button_to 'Renew',renew_path , params: {id: @company.id}, remote: true , class:"buy-button"  %> 
+            <% else%>
+             <%= button_to 'Buy Now',checkout_index_path , params: {id: @company.id}, remote: true , class:"buy-button" %> 
+            <%end%>
+              <% if current_user && current_user.admin? %>
+            <a><%= link_to 'Edit', edit_company_path(@company) , class:"buy-button"%> </a>
+              <a><%= button_to 'Delete', company_path(@company), method: :delete , class:"buy-button"%></a>
+            <% end %> 
+          </div>
+		</div>
+	</div>
 </div>
+
+
+
