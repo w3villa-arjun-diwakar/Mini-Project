@@ -19,6 +19,7 @@ class CompaniesController < ApplicationController
   # GET /companies/1 or /companies/1.json
   def show
     @user_company = current_user.user_companies
+    @enable_button_at= @company.created_at + 11.months + 15.days
     # if(params[:controller]=="users" && params[:action]=="user_policies")
     #   @company=params[:id].to_i 
     # elsif(params[:controller]=="companies" && params[:action]=="index")

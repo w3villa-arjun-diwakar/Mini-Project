@@ -1,3 +1,4 @@
+
 <div class="courses-container">
 	<div class="course">
 		<div class="course-preview">
@@ -10,24 +11,20 @@
 		<div class="course-info">
 			<h6><%= @company.policy.title %></h6>
 			<h2><%=@company.plan_info %></h2>
-            <%if @company.user_companies.present? && (@company.created_at + 11.months + 15.days < Time.now)%>
+            <%if @company.user_companies.present? %>
               <i class="text-success"> *get 10% discount on renewal</i>
             <% end%>
           <div class="card-buttons">
           
-            <%if @company.user_companies.present? && (@company.created_at + 11.months + 15.days < Time.now)%>
-              <%= button_to 'Renew',renew_path , params: {id: @company.id}, remote: true , class:"buy-button"  %> 
-            <% else%>
-             <%= button_to 'Buy Now',checkout_index_path , params: {id: @company.id}, remote: true , class:"buy-button" %> 
-            <%end%>
+            <%if @company.user_companies.present? %>
+              <%= button_to 'Renew',renew_path , params: {id: @company.id}, remote: true , class:"btn btn-lg buy-button",id:"renew-button" , disabled: @enable_button_at > Time.now %> 
+            <% end%>
+            <%= button_to 'Buy Now',checkout_index_path , params: {id: @company.id}, remote: true , class:"btn btn-lg buy-button"%> 
               <% if current_user && current_user.admin? %>
-            <a><%= link_to 'Edit', edit_company_path(@company) , class:"buy-button"%> </a>
-              <a><%= button_to 'Delete', company_path(@company), method: :delete , class:"buy-button"%></a>
+            <a><%= link_to 'Edit', edit_company_path(@company) , class:"btn btn-lg buy-button"%> </a>
+              <a><%= button_to 'Delete', company_path(@company), method: :delete , class:"btn btn-lg buy-button"%></a>
             <% end %> 
           </div>
 		</div>
 	</div>
 </div>
-
-
-

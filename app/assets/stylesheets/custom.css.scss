@@ -18,6 +18,11 @@ body{
   background-color: #d0eff2;
   
 }
+.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0; /* remove the gap so it doesn't close */
+}
+
 //car insurance form 
 
 .login-box {
@@ -339,7 +344,10 @@ body{
   width: 270px;
 }
 // .admin-row{
-//   margin: 0 20px;
+//   background-color: #d0eff2;
+//   position: fixed;
+//   top: 63px;
+  
 // }
 .sidebar-icon{
     display: flex;
@@ -602,19 +610,29 @@ body{
   display:flex;
   margin-top: 50px;
 }
-.buy-button{
+.buy-button[disabled]{
 	background-color: #2A265F;
+  color: white;
 	border: 0;
 	border-radius: 50px;
 	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
-	color: #fff;
 	font-size: 16px;
 	padding: 12px 25px;
-	// position: absolute;
-	bottom: 30px;
-	right: 30px;
 	letter-spacing: 1px;
-  margin: 10px;
+  margin: 5px;
+  margin-left: 0;
+  text-decoration: none;
+}
+.buy-button{
+	background-color: #2A265F;
+  color: white;
+	border: 0;
+	border-radius: 50px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+	font-size: 16px;
+	padding: 12px 25px;
+	letter-spacing: 1px;
+  margin: 5px;
   margin-left: 0;
   text-decoration: none;
 }

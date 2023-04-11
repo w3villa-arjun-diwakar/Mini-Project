@@ -3,35 +3,38 @@
         <%=render 'users/sidebar'%>
     </div>
     <section class="admin-main-content ">
-        <div class='row admin-row'>  
-            <div class='col-md-4'>
-                <div class="card text-center" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Users</h5>
-                        <p class="card-text"><%= pluralize(User.count ,"User")%></p>
-                        <a><%= link_to 'See Users', users_path, class:"btn btn-info"%> </a>
+        <div class="admin-row">
+            <div class='row'>  
+                <div class='col-md-4'>
+                    <div class="card text-center" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Users</h5>
+                            <p class="card-text"><%= pluralize(User.count ,"User")%></p>
+                            <a><%= link_to 'See Users', users_path, class:"btn btn-info"%> </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class='col-md-4'>
-                <div class="card text-center" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Policies</h5>
-                        <p class="card-text"><%= pluralize(Policy.count ,"Policy")%></p>
-                        <a><%= link_to 'See Policies', policies_path, class:"btn btn-info"%> </a>
+                <div class='col-md-4'>
+                    <div class="card text-center" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Policies</h5>
+                            <p class="card-text"><%= pluralize(Policy.count ,"Policy")%></p>
+                            <a><%= link_to 'See Policies', policies_path, class:"btn btn-info"%> </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class='col-md-4'>
-                <div class="card text-center" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Companies</h5>
-                        <p class="card-text"><%= pluralize(Company.count ,"Company")%></p>
-                        <a><%= link_to 'See Companies', companies_path, class:"btn btn-info"%> </a>
+                <div class='col-md-4'>
+                    <div class="card text-center" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Companies</h5>
+                            <p class="card-text"><%= pluralize(Company.count ,"Company")%></p>
+                            <a><%= link_to 'See Companies', companies_path, class:"btn btn-info"%> </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
             <div class="box shadow rounded mt-4">
                 <table class="table table-hover table-bordered company-table ">
                     <thead>
